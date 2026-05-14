@@ -1,8 +1,9 @@
-name: California Job Alerts
+```yaml
+name: California PM Job Alerts
 
 on:
   schedule:
-    - cron: "0 16 * * *" # 9 AM California time
+    - cron: "0 16 * * *"
   workflow_dispatch:
 
 jobs:
@@ -10,16 +11,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout Repo
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+      - name: Install Dependencies
+        run: |
+          pip install requests beautifulsoup4
 
-      - name: Run job search
+      - name: Run Job Search
         run: python job_search.py
+```
