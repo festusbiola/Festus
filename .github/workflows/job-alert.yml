@@ -1,4 +1,3 @@
-```yaml
 name: California PM Job Alerts
 
 on:
@@ -25,4 +24,3 @@ jobs:
 
       - name: Run Job Search
         run: python job_search.py
-```
