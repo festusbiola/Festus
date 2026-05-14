@@ -1,1 +1,25 @@
+name: California Job Alerts
 
+on:
+  schedule:
+    - cron: "0 16 * * *" # 9 AM California time
+  workflow_dispatch:
+
+jobs:
+  search-jobs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run job search
+        run: python job_search.py
