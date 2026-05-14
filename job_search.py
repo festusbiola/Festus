@@ -4,7 +4,7 @@ import json
 import os
 
 URL = "https://jobs.apple.com/en-us/search"
-URL - "https://careers.mastercard.com/us/en/search"
+URL = "https://careers.mastercard.com/us/en/search"
 headers = {
     "User-Agent": "Mozilla/5.0"
 }
